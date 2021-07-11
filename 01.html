@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Домашняя работа 50-1, Виталий</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        #card {
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+        }
+        .movie {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 2px #ccc;
+            width: 200px;
+            padding: 20px;
+            align-content: baseline;
+            justify-content: space-between;
+        }
+        img {
+            width: 180px;
+            height: auto;
+            align-items: end;
+        }
+        h1 {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="card"></div>
+
+    <script type="text/babel">
+        const Movies = props => {
+            return (
+                <div className="movie">
+                    <p>Название Фильма:</p>
+                    <h1><text>{props.movie}</text></h1>
+                    <p>Год выпуска: {props.year}</p>
+                    <img src={props.url}/>
+                </div>
+        );
+        };
+
+        const movie = (
+            <>
+                <Movies movie='Avatar: The Game' year="2009" url="https://upload.wikimedia.org/wikipedia/ru/4/4b/Avatar-2009.jpg"/>
+                <Movies movie="Lock, Stock and Two Smoking Barrels" year="1998" url="https://citaty.info/files/posters/1023.jpg"/>
+                <Movies movie="Wish Dragon" year="2021" url="https://movies.az/images/shares/fdfecad2a1c9618509f6ffd611f3c0ef.jpg"/>
+            </>
+        );
+
+        const container = document.getElementById('card');
+
+        ReactDOM.render(movie, container);
+    </script>
+</body>
+</html>

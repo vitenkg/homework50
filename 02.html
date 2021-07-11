@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Домашняя работа 50-2, Виталий</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+<div id="header"></div>
+<div id="mainImg"></div>
+<div id="main"></div>
+<div id="main-bottom"></div>
+<div id="footer"></div>
+
+    <script type="text/babel">
+        const Header = props => {
+            return (
+                    <div className="cont  clearfix">
+                        <a className="logo" href="#">
+                            <img src={props.url}/>
+                        </a>
+                        <nav className="main-nav">
+                            <ul>
+                                <li><a href="#">home</a></li>
+                                <li><a href="#">products</a></li>
+                                <li><a href="#">services</a></li>
+                                <li><a href="#">our work</a></li>
+                                <li><a href="#">contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                );
+        };
+
+        const ImgMain = () => {
+            return (
+                    <div className="news">
+                        <div className="cont">
+                            <strong>lastest news</strong>
+                            <span>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus…</span>
+                        </div>
+                    </div>
+            );
+        };
+
+        const Main = props => {
+            return (
+                <div className="cont clearfix">
+                    <p className="ahead">
+                        our services
+                        <a href="#">{props.mainUrl}</a>
+                    </p>
+                    <div className="photo-right">
+                        <img src={props.url}/>
+                    </div>
+                    <p className="text">
+                        {props.paragraph1}
+                    </p>
+                    <p className="text">
+                        {props.paragraph2}
+                    </p>
+                    <p className="text">
+                        {props.paragraph3}
+                    </p>
+                    <div className="line"/>
+                </div>
+            );
+        };
+
+        const MainBottom = props => {
+            return (
+                <div className="cont clearfix">
+                    <p className="ahead">
+                        Unique Design <strong className="ahead2">Shoe house</strong>
+                    </p>
+                    <div className="photo-left">
+                        <img src={props.url1}/>
+                    </div>
+                    <p className="text">
+                        {props.paragraph1}
+                    </p>
+
+                    <p className="text">
+                        {props.paragraph1}
+                    </p>
+                    <div className="photo-left">
+                        <img src={props.url2}/>
+                    </div>
+                    <p className="text">
+                        {props.paragraph1}
+                    </p>
+                </div>
+            );
+        };
+
+        const Footer = props => {
+            return (
+                    <div className="cont clearfix">
+                        {props.signature}
+                        <a href="#" className="logo-footer rss"/>
+                        <a href="#" className="logo-footer tw"/>
+                        <a href="#" className="logo-footer fb"/>
+                    </div>
+            );
+        };
+
+        const head = (
+            <header className="header">
+                <Header url="images/logo.png"/>
+            </header>
+        );
+
+        const imgMain = (
+            <div className="main-pic">
+                <ImgMain/>
+            </div>
+        );
+
+        const main = (
+            <>
+                <Main mainUrl="Blazrobar.com" url="images/photo-1.jpg" paragraph1="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sed dolor, quia hic magnam
+                        quam dolorum itaque accusamus mollitia quisquam assumenda totam officia repellat corporis iure
+                        sit quas temporibus reiciendis pariatur ipsam ea! Aperiam, quaerat qui tempora quam porro
+                        quibusdam accusamus dolore error saepe molestiae magni voluptate, fugit cum! Maxime, molestias
+                        ipsa? Quis esse aut expedita! Mollitia esse quasi possimus culpa voluptas, facilis nesciunt
+                        vitae rerum quae, minus porro unde." paragraph2="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sed dolor, quia hic magnam
+                        quam dolorum itaque accusamus mollitia quisquam assumenda totam officia repellat corporis iure
+                        sit quas temporibus reiciendis pariatur ipsam ea! Aperiam, quaerat qui tempora quam porro
+                        quibusdam accusamus dolore error saepe molestiae magni voluptate, fugit cum! Maxime, molestias
+                        ipsa? Quis esse aut expedita! Mollitia esse quasi possimus culpa voluptas, facilis nesciunt
+                        vitae rerum quae, minus porro unde." paragraph3="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sed dolor, quia hic magnam
+                        quam dolorum itaque accusamus mollitia quisquam assumenda totam officia repellat corporis iure
+                        sit quas temporibus reiciendis pariatur ipsam ea! Aperiam, quaerat qui tempora quam porro
+                        quibusdam accusamus dolore error saepe molestiae magni voluptate, fugit cum! Maxime, molestias
+                        ipsa? Quis esse aut expedita! Mollitia esse quasi possimus culpa voluptas, facilis nesciunt
+                        vitae rerum quae, minus porro unde."/>
+            </>
+        );
+
+        const mainBottom = (
+            <>
+                <MainBottom url1="images/photo-2.jpg" url2="images/photo-3.jpg" paragraph1="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sed dolor, quia hic magnam
+                        quam dolorum itaque accusamus mollitia quisquam assumenda totam officia repellat corporis iure
+                        sit quas temporibus reiciendis pariatur ipsam ea! Aperiam, quaerat qui tempora quam porro
+                        quibusdam accusamus dolore error saepe molestiae magni voluptate, fugit cum! Maxime, molestias
+                        ipsa? Quis esse aut expedita! Mollitia esse quasi possimus culpa voluptas, facilis nesciunt
+                        vitae rerum quae, minus porro unde." paragraph2="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sed dolor, quia hic magnam
+                        quam dolorum itaque accusamus mollitia quisquam assumenda totam officia repellat corporis iure
+                        sit quas temporibus reiciendis pariatur ipsam ea! Aperiam, quaerat qui tempora quam porro
+                        quibusdam accusamus dolore error saepe molestiae magni voluptate, fugit cum! Maxime, molestias
+                        ipsa? Quis esse aut expedita! Mollitia esse quasi possimus culpa voluptas, facilis nesciunt
+                        vitae rerum quae, minus porro unde." paragraph3="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt sed dolor, quia hic magnam
+                        quam dolorum itaque accusamus mollitia quisquam assumenda totam officia repellat corporis iure
+                        sit quas temporibus reiciendis pariatur ipsam ea! Aperiam, quaerat qui tempora quam porro
+                        quibusdam accusamus dolore error saepe molestiae magni voluptate, fugit cum! Maxime, molestias
+                        ipsa? Quis esse aut expedita! Mollitia esse quasi possimus culpa voluptas, facilis nesciunt
+                        vitae rerum quae, minus porro unde."/>
+            </>
+        );
+
+        const footer = (
+            <footer>
+                <Footer signature="Copyright 2012 Footer here"/>
+            </footer>
+        );
+
+        const headerE = document.getElementById('header');
+        const mainImgE = document.getElementById('mainImg');
+        const mainE = document.getElementById('main');
+        const mainBottomE = document.getElementById('main-bottom');
+        const footerE = document.getElementById('footer');
+
+        ReactDOM.render(head, headerE);
+        ReactDOM.render(imgMain, mainImgE);
+        ReactDOM.render(main, mainE);
+        ReactDOM.render(mainBottom, mainBottomE);
+        ReactDOM.render(footer, footerE);
+
+    </script>
+</body>
+</html>
